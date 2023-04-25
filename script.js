@@ -19,19 +19,7 @@ function createGrid(size) {
 
 createGrid(gridSize)
 
-function updateGrid () {
-    let newGrid = prompt('enter a number')
-    gridSize = parseInt(newGrid)
-    removeOldGrid()
-    createGrid(gridSize)
 
-}
-
-function removeOldGrid (){
-    while (pixelContainer.lastElementChild){
-        pixelContainer.removeChild(pixelContainer.lastElementChild)
-    }
-}
 
 
 
