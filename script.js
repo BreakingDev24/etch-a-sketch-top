@@ -18,7 +18,7 @@ function createGrid(size) {
         pixelContainer.appendChild(pixels)
     }
     const pixelElement = document.querySelectorAll('.pixel')
-    pixelElement.forEach(pixelElement => pixelElement.addEventListener('mouseover', changePixelColor))
+    pixelElement.forEach(pixelElement => pixelElement.addEventListener('mouseover', changePixelColor));
 }
 
 createGrid(gridSize)
@@ -49,6 +49,9 @@ function setColor (event) {
         case 'eraser':
             color = 'white'
             break;
+        case 'clear':
+            clearGrid();
+            break
     }
 }
 
@@ -64,6 +67,11 @@ function removeOldGrid (){
     while (pixelContainer.lastElementChild){
         pixelContainer.removeChild(pixelContainer.lastElementChild)
     }
+}
+
+function clearGrid() {
+    const pixelElement = document.querySelectorAll('.pixel')
+    pixelElement.forEach(pixelElement => pixelElement.style.backgroundColor = "")
 }
 
 
