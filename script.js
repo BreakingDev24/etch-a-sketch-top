@@ -58,7 +58,11 @@ function setColor (event) {
 
 function updateGrid () {
     let newGrid = prompt('enter a number')
+    while (newGrid > 100) {
+        newGrid = prompt('enter a number')
+    } 
     gridSize = parseInt(newGrid)
+
     removeOldGrid()
     createGrid(gridSize)
 }
